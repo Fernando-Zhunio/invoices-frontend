@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Brands</h1>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-12">
+      <div class="row">
+        <mat-card
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          *ngFor="let brand of brands"
+        >
+        <mat-card-content>
+            <h3>{{brand.name}}</h3>
+            <small>{{brand.createdDate | date: 'medium'}}</small>
+        </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

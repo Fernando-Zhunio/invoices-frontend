@@ -40,7 +40,7 @@ export class StorageService {
   getSessionLocalStorage(): Session | null {
     const dataConvert = this.decryptAes(localStorage.getItem('session'));
     if (dataConvert) {
-      return JSON.parse(dataConvert);
+      return JSON.parse(dataConvert) as Session;
     }
     return null;
   }

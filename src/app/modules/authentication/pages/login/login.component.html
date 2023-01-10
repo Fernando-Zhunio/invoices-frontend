@@ -1,3 +1,16 @@
-<div>
-    Soy el login
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="col-md-4 col-11">
+        <h2 class="fs-1">Inicio de sesión</h2>
+        <div [formGroup]="form">
+            <mat-form-field class="w-100">
+                <input formControlName="email" matInput placeholder="Correo electrónico">
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <input formControlName="password" matInput placeholder="Contraseña">
+            </mat-form-field>
+
+            <button [disabled]="isLoadingForm" mat-raised-button color="primary" (click)="login()" class="me-2">Iniciar sesión</button>
+            <button [disabled]="isLoadingForm"[routerLink]="['../register']"  mat-raised-button color="accent" >Ir a registrarme</button>
+        </div>
+    </div>
 </div>

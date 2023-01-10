@@ -1,0 +1,23 @@
+
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="col-md-4 col-11">
+        <h2 class="fs-1">Registro de Usuario</h2>
+        <div [formGroup]="form">
+            <mat-form-field class="w-100">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="name" matInput placeholder="Nombres">
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Correo electrónico</mat-label>
+                <input formControlName="email" matInput placeholder="Correo electrónico">
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" matInput placeholder="Contraseña">
+            </mat-form-field>
+
+            <button class="me-2" [disabled]="isLoadingForm" mat-raised-button color="primary" (click)="register()">Registrarme</button>
+            <button [disabled]="isLoadingForm" mat-raised-button color="accent" [routerLink]="['../login']" >Ir a inicio de sesión</button>
+        </div>
+    </div>
+</div>

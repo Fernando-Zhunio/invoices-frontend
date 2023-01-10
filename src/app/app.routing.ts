@@ -10,12 +10,23 @@ const routes: Routes = [
     data: { guard: 'guest' }
   },
   {
-    path: 'home',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+    path: '',
+    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+    children: [
+      {
+        path: 'home',
+        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+      },
+      {
+        path: 'catalog',
+        loadChildren: () => import('./modules/products/catalog/catalog.module').then(m => m.CatalogModule),
+      }
+    ],
     canActivate: [AuthGuard],
     data: { guard: 'auth' }
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AuthResponse } from 'src/app/modules/authentication/interfaces/auth-response';
+import { Session } from '../interfaces/session';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -10,6 +12,8 @@ export class HelperService {
 
   private static user: User | null = null;
   private static token: string | null = null;
+
+  public static disabledLoaderInterceptor = false;
 
   public static User(): any {
     return this.user;
@@ -34,6 +38,17 @@ export class HelperService {
   public clearSession(): void {
     HelperService.user = null;
     HelperService.token = null;
+  }
+
+  public static convertAuthResponseToSession(authResponse: AuthResponse): Session {
+    return {
+      token: authResponse.data.token,
+      user: {
+        name: authResponse.data.name,
+        email: authResponse.data.email,
+      },
+      expiration: authResponse.data.expiration,
+    };
   }
 
 }

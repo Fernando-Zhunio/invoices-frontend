@@ -9,6 +9,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { guard: 'guest' }
   },
+  { path: '', redirectTo: 'catalog/brands', pathMatch: 'full' },
   {
     path: '',
     // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
@@ -25,8 +26,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { guard: 'auth' }
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-
 ];
 
 @NgModule({

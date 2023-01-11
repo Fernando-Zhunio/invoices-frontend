@@ -13,16 +13,14 @@ import { StorageService } from './storage.service';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private storage: StorageService, private route: ActivatedRoute) { }
 
 
-  logout(canPass: boolean = false): void {
-    // this.storageService.removeSession();
-    // this.activatedRoute.data.subscribe(res => {
-    //   if (res?.['guard'] != 'guest' || canPass) {
-    //     this.router.navigate([PATH_LOGIN]);
-    //   }
-    // })
+  logout(): void {
+    this.storage.removeSession();
+    this.route.data.subscribe(res => {
+        this.router.navigate([PATH_LOGIN]);
+    })
   }
 
    login({ email, password }: any): Observable<AuthResponse> {

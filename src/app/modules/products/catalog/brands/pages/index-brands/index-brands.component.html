@@ -1,9 +1,15 @@
+<ngx-search-bar [isChangeUrl]="true" [filters]="filters" [withFilter]="true" [withParamsClean]="true" path="brands" title="Marcas"  (data)="getData($event)">
+  <ng-container filterMenu>
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters['name'].value" placeholder="label" value="value">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="filters['address'].value"  placeholder="label" value="value">
+    </mat-form-field>
+  </ng-container>
+</ngx-search-bar>
+
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Brands</h1>
-    </div>
-  </div>
   <div class="row" >
     <div class="col-12">
       <div class="row">

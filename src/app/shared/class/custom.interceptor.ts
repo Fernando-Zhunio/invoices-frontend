@@ -22,7 +22,6 @@ export class CustomInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let headers: any = new HttpHeaders();
     const isAuthenticated = HelperService.isAuthenticated();
-    console.log('isAuthenticated', isAuthenticated);
     if (isAuthenticated) {
       headers = this.createHeader();
     }
@@ -43,7 +42,6 @@ export class CustomInterceptor implements HttpInterceptor {
         if (err.status === 401 || err.status === 403) { this.sa.logout(); }
         console.log(err.status, err.error);
         const message = this.getStatusMessage(err.status, err.error);
-        // SwalService.swalToast(message, 'warning')
         alert(message);
         return throwError(err);
       })

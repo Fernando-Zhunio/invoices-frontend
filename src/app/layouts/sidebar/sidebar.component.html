@@ -1,0 +1,10 @@
+<nav [ngClass]="{'close-sidebar': !isOpenSidebar}" class="bg-sidebar">
+    <button (click)="toggleSidebar()" class="btn-close-sidebar bg-sidebar">
+        <!-- <img class="arrow-close-sidebar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaUlEQVR4nO3Yy0rDYBCG4VdcGUGraKnWhVUXHq7cheDe80KstVhPeAStZpHehSIkkEXVZmbz/TEfzAU8/O1MZqBKFdlEwA7wCqwTMGIP+ExrAGwSIGI/h8hjNggIcTAEkVUSAiYCDn9BZBUDa4hmckREHrOKYHYLILJ6B1qIZdsA+a4+sIxQJn7oVEG+TPRHx/o3mL7azywq2MHkMUdGzAvQRGy2HBsxz4qYEwdmkZJgntQwU0DbiHkEFhDKdNkw50bMA9BADNMpC6bmwFwDcwhlFugZMV1gDKFOdmqExMA4Iv+TMyNiAGwROCJROSt5ZkmicoGpOWZIrHJ58SA+lBAdB0LibDQDXDj2+FIgVhDIfPopYd3bWyqIm9ARdQfiTeWCUgduHfv5EiVANBFJz7HCSh0X2sZtT2oPz2ZGN+SXsLRdyZcoigkCkccM62D3aheQUdvxXQ5xlQKDTAO4TNdaqfNNlSr48wUOEifEUnkwowAAAABJRU5ErkJggg=="> -->
+        <i class="arrow-close-sidebar fa-solid fa-chevron-right"></i>
+    </button>
+    <ul class="sidebar-container">
+        <ng-content></ng-content>
+        
+      </ul>
+</nav>

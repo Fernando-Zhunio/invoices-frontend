@@ -20,7 +20,7 @@ export class StorageService {
 
   constructor(private permissionsService: NgxPermissionsService,  private helperService: HelperService) {}
 
-  setSession(session: Session): void {
+  saveSession(session: Session): void {
     this.session = session;
     localStorage.setItem('session', this.encryptedAes(JSON.stringify(session)));
     this.helperService.setUser(session.user);
@@ -30,7 +30,7 @@ export class StorageService {
   setUser(user: User): void {
     const session: Session = this.session!;
     session.user = user;
-    this.setSession(session);
+    this.saveSession(session);
   }
 
   getSession(): Session {

@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         {
           next: (res) => {
-            this.serviceStorage.setSession(HelperService.convertAuthResponseToSession(res));
+            this.serviceStorage.saveSession(HelperService.convertAuthResponseToSession(res));
             this.router.navigate(['/']);
             this.isLoadingForm = false;
           },

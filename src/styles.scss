@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Nunito, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    overflow: hidden; 
+    padding: 0;
+}
+.ngx-search-bar .title{
+    font-family: Nunito, "Helvetica Neue", sans-serif !important;
+}
+:root {
+    --width-sidebar: 250px;
+}
+
+.bg-sidebar{
+    background-color: rgba(255, 255, 255, 0.616);
+}

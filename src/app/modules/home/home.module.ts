@@ -1,7 +1,9 @@
+import { NgxSearchBarModule } from 'ngx-search-bar-fz';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeRouting } from './home.routing';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 
@@ -11,7 +13,9 @@ import { HomeRouting } from './home.routing';
   ],
   imports: [
     CommonModule,
-    HomeRouting
+    HomeRouting,
+    MatChipsModule,
+    NgxSearchBarModule
   ]
 })
 export class HomeModule { }

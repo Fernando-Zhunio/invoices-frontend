@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { AuthGuard } from './shared/guards/auth/auth.guard';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'catalog/brands', pathMatch: 'full' },
   {
     path: '',
-    // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+    component: LayoutAdminComponent,
     children: [
       {
         path: 'home',

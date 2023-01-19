@@ -32,7 +32,7 @@ export class HelperService {
   }
 
   public static isAuthenticated(): boolean {
-    return this.user !== null && this.token !== null;
+    return HelperService.user !== null && HelperService.token !== null;
   }
 
   public clearSession(): void {

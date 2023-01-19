@@ -16,7 +16,7 @@ import { HelperService } from "../../services/helper.service";
   providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService) { }
+  constructor() { }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -27,11 +27,11 @@ export class AuthGuard implements CanActivate {
     | UrlTree {
      const  isGuest = next.data['guard'] === 'guest';
      const isAuthenticated = HelperService.isAuthenticated();
+     console.log({isAuthenticated, isGuest});
     // si estoy autenticado y es una ruta api o si no estoy autenticado y es una ruta de guest
     if ((isAuthenticated && !isGuest) || (!isAuthenticated && isGuest)) {
       return true;
     }
-    this.authService.logout();
     return false;
   }
 }

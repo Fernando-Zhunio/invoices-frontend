@@ -27,7 +27,7 @@ export class RegisterComponent {
       .subscribe(
         {
           next: (res) => {
-            this.serviceStorage.setSession(HelperService.convertAuthResponseToSession(res));
+            this.serviceStorage.saveSession(HelperService.convertAuthResponseToSession(res));
             this.router.navigate(['/']);
           },
           error: () => {
